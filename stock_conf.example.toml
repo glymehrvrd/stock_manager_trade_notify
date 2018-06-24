@@ -1,0 +1,35 @@
+#CRON Expression Format
+#A cron expression represents a set of times, using 6 space-separated fields.
+
+#Field name   | Mandatory? | Allowed values  | Allowed special characters
+#----------   | ---------- | --------------  | --------------------------
+#Seconds      | Yes        | 0-59            | * / , -
+#Minutes      | Yes        | 0-59            | * / , -
+#Hours        | Yes        | 0-23            | * / , -
+#Day of month | Yes        | 1-31            | * / , - ?
+#Month        | Yes        | 1-12 or JAN-DEC | * / , -
+#Day of week  | Yes        | 0-6 or SUN-SAT  | * / , - ?
+
+cron_schema = "0 30 * * * *"
+
+# unit: seconds
+stock_interval = 60
+
+# postgres db config
+[db]
+user = "xxx"
+password = "xxx"
+host = "localhost"
+port = 5432
+database = "postgres"
+
+[mail]
+from = "xxx@qq.com"
+to = "xxx@139.com"
+
+[mail.smtp]
+host = "smtp.qq.com"
+port = 465
+user = "xxx@qq.com"
+password = "xxx"
+

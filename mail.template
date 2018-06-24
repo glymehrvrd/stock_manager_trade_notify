@@ -1,0 +1,73 @@
+<style type="text/css">
+    .tg {
+        border-collapse: collapse;
+        border-spacing: 0;
+        border-color: #999;
+    }
+
+    .tg td {
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        padding: 10px 5px;
+        border-style: solid;
+        border-width: 1px;
+        overflow: hidden;
+        word-break: normal;
+        border-color: #999;
+        color: #444;
+        background-color: #F7FDFA;
+    }
+
+    .tg th {
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        font-weight: normal;
+        padding: 10px 5px;
+        border-style: solid;
+        border-width: 1px;
+        overflow: hidden;
+        word-break: normal;
+        border-color: #999;
+        color: #fff;
+        background-color: #26ADE4;
+    }
+
+    .tg .tg-yw4l {
+        vertical-align: top
+    }
+</style>
+<a href="http://data.eastmoney.com/executive/{{(index . 0).Code}}.html">点击查看详细信息</a>
+<table class="tg" style="undefined;table-layout: fixed; width: 856px">
+    <colgroup>
+        <col style="width: 100px">
+        <col style="width: 84px">
+        <col style="width: 91px">
+        <col style="width: 85px">
+        <col style="width: 116px">
+        <col style="width: 71px">
+        <col style="width: 100px">
+        <col style="width: 209px">
+    </colgroup>
+    <tr>
+        <th class="tg-yw4l">股票名称</th>
+        <th class="tg-yw4l">股票代码</th>
+        <th class="tg-yw4l">交易日期</th>
+        <th class="tg-yw4l">高管名称</th>
+        <th class="tg-yw4l">数量</th>
+        <th class="tg-yw4l">价格</th>
+        <th class="tg-yw4l">原因</th>
+        <th class="tg-yw4l">金额</th>
+    </tr>
+    {{range $index, $info := . -}}
+    <tr>
+        <td class="tg-yw4l">{{$info.Name}}</td>
+        <td class="tg-yw4l">{{$info.Code}}</td>
+        <td class="tg-yw4l">{{$info.TradeDate.Format "2006-01-02"}}</td>
+        <td class="tg-yw4l">{{$info.Trader}}</td>
+        <td class="tg-yw4l">{{comma $info.TradeCount}}</td>
+        <td class="tg-yw4l">{{$info.TransactionPrice}}</td>
+        <td class="tg-yw4l">{{$info.TransactionReason}}</td>
+        <td class="tg-yw4l">{{comma $info.TransactionAmount}}</td>
+    </tr>
+    {{end -}}
+</table>
