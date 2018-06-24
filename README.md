@@ -4,7 +4,7 @@
 定时检测高管持股变动情况，发现新的高管持股变动信息自动发送邮件进行提醒
 
 ## 安装
-* 根据参考配置文件`stock_conf.example.toml`设定配置并保存到`stock_conf.example.toml`
+* 根据参考配置文件`stock_conf.example.toml`新建配置并保存到`stock_conf.toml`
 * 安装数据库`postgresql`
 * 执行程序
 ```bash
